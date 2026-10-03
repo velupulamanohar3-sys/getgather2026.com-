@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f3eb">
+  <title>2024 Batch — 10th Class Get-Together 2026</title>
+  <style>
+    :root {
+      --paper: #f7f3eb;
+      --ink: #25251f;
+      --muted: #77766e;
+      --wine: #843e4a;
+      --wine-dark: #622d37;
+      --gold: #d7a957;
+      --sage: #667a68;
+      --line: rgba(37, 37, 31, .12);
+      --white: #fffdf8;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); }
+    a { color: inherit; }
+    .wrap { width: min(1160px, calc(100% - 44px)); margin-inline: auto; }
+    .topbar { display: flex; align-items: center; justify-content: space-between; padding: 23px 0; border-bottom: 1px solid var(--line); }
+    .brand { display: flex; align-items: center; gap: 11px; font-size: 13px; font-weight: 750; letter-spacing: .09em; text-transform: uppercase; }
+    .brand-mark { display: grid; place-items: center; width: 34px; height: 34px; border: 1px solid var(--wine); border-radius: 50%; color: var(--wine); font: 16px var(--serif); }
+    .nav { display: flex; gap: 28px; font-size: 13px; color: var(--muted); }
+    .nav a { text-decoration: none; }
+    .nav a:hover { color: var(--wine); }
+    .hero { position: relative; min-height: 475px; display: grid; grid-template-columns: 1.1fr .9fr; align-items: center; gap: 40px; padding: 64px 0 72px; overflow: hidden; }
+    .eyebrow { display: flex; align-items: center; gap: 10px; margin: 0 0 18px; color: var(--wine); font-size: 11px; font-weight: 800; letter-spacing: .17em; text-transform: uppercase; }
+    .eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--wine); }
+    h1 { max-width: 680px; margin: 0; font: 500 clamp(48px, 7vw, 86px)/.98 var(--serif); letter-spacing: -.055em; }
+    h1 em { color: var(--wine); font-weight: 400; }
+    .hero-copy { max-width: 450px; margin: 23px 0 28px; color: var(--muted); font-size: 15px; line-height: 1.8; }
+    .button { display: inline-flex; align-items: center; gap: 12px; padding: 13px 19px; border: 0; border-radius: 3px; background: var(--wine); color: white; text-decoration: none; font-size: 12px; font-weight: 750; letter-spacing: .04em; transition: background .2s, transform .2s; }
+    .button:hover { background: var(--wine-dark); transform: translateY(-2px); }
+    .button .arrow { font-size: 16px; }
+    .hero-art { position: relative; min-height: 342px; display: grid; place-items: center; }
+    .sun { position: absolute; top: 18px; right: 12%; width: 235px; height: 235px; border-radius: 50%; background: #e8d7b4; }
+    .art-card { position: relative; width: min(330px, 88%); aspect-ratio: .82; padding: 23px; border: 1px solid rgba(37,37,31,.15); background: linear-gradient(155deg, #a95a60, #713741 72%); box-shadow: 16px 20px 0 #e9e2d5; transform: rotate(4deg); color: #fff7e9; }
+    .art-card::before { content: ""; position: absolute; inset: 12px; border: 1px solid rgba(255,247,233,.35); }
+    .art-inner { position: relative; z-index: 1; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+    .art-small { font-size: 9px; font-weight: 750; letter-spacing: .22em; text-transform: uppercase; }
+    .art-year { margin: 17px 0 5px; font: 76px/.9 var(--serif); letter-spacing: -.08em; }
+    .art-script { font: italic 30px var(--serif); }
+    .art-rule { width: 45px; height: 1px; margin: 18px 0; background: var(--gold); }
+    .art-caption { font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
+    .sparkle { position: absolute; z-index: 2; color: var(--gold); font: 28px var(--serif); }
+    .sparkle.one { top: 22px; left: 11%; }
+    .sparkle.two { right: 3%; bottom: 48px; font-size: 20px; }
+    .details { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .detail { padding: 22px 26px 22px 0; }
+    .detail + .detail { padding-left: 28px; border-left: 1px solid var(--line); }
+    .detail-label { display: block; margin-bottom: 8px; color: var(--muted); font-size: 10px; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; }
+    .detail-value { font: 21px var(--serif); }
+    section { scroll-margin-top: 20px; }
+    .roster-section { padding: 88px 0 86px; }
+    .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 28px; }
+    .section-heading h2 { margin: 0; font: 500 clamp(37px, 5vw, 56px)/1 var(--serif); letter-spacing: -.04em; }
+    .section-heading p { max-width: 350px; margin: 0; color: var(--muted); font-size: 13px; line-height: 1.7; }
+    .roster-layout { display: grid; grid-template-columns: 300px 1fr; gap: 28px; align-items: start; }
+    .form-stack { display: grid; gap: 14px; }
+    .friend-session { color: var(--muted); font-size: 12px; line-height: 1.6; }
+    .friend-session strong { color: var(--ink); }
+    .sign-out { margin-top: 9px; padding: 0; border: 0; background: transparent; color: var(--wine); cursor: pointer; font: 700 11px var(--sans); }
+    [hidden] { display: none !important; }
+    .form-card { padding: 24px; background: var(--white); border: 1px solid var(--line); }
+    .form-card h3 { margin: 0 0 5px; font: 24px var(--serif); }
+    .form-card > p { margin: 0 0 20px; color: var(--muted); font-size: 12px; line-height: 1.6; }
+    label { display: block; margin: 14px 0 7px; font-size: 11px; font-weight: 750; }
+    input, select { width: 100%; padding: 11px 12px; border: 1px solid var(--line); border-radius: 2px; background: #fff; color: var(--ink); font: 13px var(--sans); }
+    input:focus, select:focus { outline: 2px solid rgba(132,62,74,.25); border-color: var(--wine); }
+    .submit { width: 100%; justify-content: center; margin-top: 17px; cursor: pointer; }
+    .local-note { margin: 14px 0 0 !important; padding-top: 12px; border-top: 1px solid var(--line); font-size: 10px !important; }
+    .roster-panel { min-width: 0; }
+    .section-tabs { display: flex; gap: 8px; margin-bottom: 15px; }
+    .tab { min-width: 92px; padding: 11px 14px; border: 1px solid var(--line); background: transparent; color: var(--muted); cursor: pointer; font: 700 11px var(--sans); letter-spacing: .06em; text-transform: uppercase; }
+    .tab[aria-selected="true"] { border-color: var(--wine); background: var(--wine); color: #fff; }
+    .roster-box { min-height: 326px; padding: 0 22px; border: 1px solid var(--line); background: var(--white); }
+    .roster-top { display: flex; align-items: center; justify-content: space-between; padding: 20px 0 14px; border-bottom: 1px solid var(--line); }
+    .roster-top h3 { margin: 0; font: 23px var(--serif); }
+    .count { color: var(--muted); font-size: 11px; }
+    .student-list { margin: 0; padding: 0; list-style: none; }
+    .student { display: grid; grid-template-columns: 56px 1fr auto; align-items: center; gap: 14px; min-height: 57px; border-bottom: 1px solid var(--line); }
+    .student:last-child { border-bottom: 0; }
+    .roll { color: var(--wine); font: 16px var(--serif); }
+    .student-details { display: grid; gap: 3px; }
+    .student-name { font-size: 13px; font-weight: 650; }
+    .student-meta { color: var(--muted); font-size: 10px; }
+    .class-photo-section { padding: 68px 0 82px; }
+    .photo-heading { display: flex; align-items: end; justify-content: space-between; gap: 25px; margin-bottom: 20px; }
+    .photo-heading h2 { margin: 0; font: 500 clamp(36px, 5vw, 54px)/1 var(--serif); letter-spacing: -.04em; }
+    .photo-heading p { max-width: 370px; margin: 0; color: var(--muted); font-size: 13px; line-height: 1.7; }
+    .class-photo { margin: 0; padding: 10px; background: var(--white); border: 1px solid var(--line); }
+    .class-photo img { display: block; width: 100%; height: auto; }
+    .class-photo figcaption { padding: 13px 6px 4px; color: var(--muted); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; }
+    .remove { border: 0; background: none; color: #9a9186; cursor: pointer; font-size: 11px; }
+    .remove:hover { color: var(--wine); }
+    .empty { display: grid; place-items: center; min-height: 240px; padding: 30px; text-align: center; color: var(--muted); font-size: 13px; line-height: 1.7; }
+    .empty span { display: block; margin-bottom: 10px; color: var(--gold); font: 36px var(--serif); }
+    .memories { padding: 63px 0; background: #eae4d8; }
+    .memories-inner { display: flex; align-items: center; justify-content: space-between; gap: 35px; }
+    .memories h2 { margin: 0 0 10px; font: 500 clamp(34px, 5vw, 52px)/1.05 var(--serif); letter-spacing: -.04em; }
+    .memories p { max-width: 500px; margin: 0; color: #6f6a60; font-size: 13px; line-height: 1.8; }
+    .memory-stamp { flex: 0 0 auto; display: grid; place-items: center; width: 135px; height: 135px; border: 1px solid rgba(132,62,74,.45); border-radius: 50%; color: var(--wine); text-align: center; transform: rotate(-9deg); }
+    .memory-stamp span { font: italic 21px var(--serif); }
+    .memory-stamp small { font-size: 8px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+    .memory-gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 36px; }
+    .memory-card { margin: 0; padding: 10px; border: 1px solid var(--line); background: var(--white); }
+    .memory-card img { display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
+    .memory-card figcaption { padding: 13px 5px 3px; font: 18px var(--serif); }
+    footer { padding: 24px 0; color: var(--muted); font-size: 10px; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 20px; }
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 32px, 560px); }
+      .nav { gap: 15px; font-size: 11px; }
+      .hero { grid-template-columns: 1fr; gap: 10px; padding: 52px 0 42px; }
+      .hero-art { min-height: 310px; }
+      .sun { right: 16%; width: 205px; height: 205px; }
+      .art-card { width: 250px; }
+      .art-year { font-size: 64px; }
+      .details { grid-template-columns: 1fr; }
+      .detail, .detail + .detail { padding: 16px 0; border-left: 0; }
+      .detail + .detail { border-top: 1px solid var(--line); }
+      .detail-value { font-size: 19px; }
+      .roster-section { padding: 65px 0; }
+      .section-heading { display: block; }
+      .section-heading p { margin-top: 13px; }
+      .roster-layout { grid-template-columns: 1fr; }
+      .photo-heading { display: block; }
+      .photo-heading p { margin-top: 12px; }
+      .memories-inner { align-items: start; }
+      .memory-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .memory-stamp { width: 100px; height: 100px; }
+      .memory-stamp span { font-size: 17px; }
+      .footer-inner { flex-direction: column; }
+    }
+    @media (max-width: 420px) {
+      .brand { font-size: 10px; }
+      .nav { gap: 10px; font-size: 10px; }
+      .nav a:first-child { display: none; }
+      .memory-gallery { grid-template-columns: 1fr; }
+      .section-tabs { gap: 5px; }
+      .tab { min-width: 0; flex: 1; padding-inline: 7px; }
+      .roster-box { padding-inline: 15px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="wrap topbar">
+    <a class="brand" href="#top" aria-label="2024 batch reunion home"><span class="brand-mark">10</span> Our Class Reunion</a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#details">Party details</a>
+      <a href="#roster">Class list</a>
+      <a href="#friend-signin">Friend sign-in</a>
+      <a href="#memories">Memories</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <div class="wrap">
+      <section class="hero" aria-labelledby="hero-title">
+        <div>
+          <p class="eyebrow">10th class · 2024 batch</p>
+          <h1 id="hero-title">Old friends.<br><em>One more</em><br>great day.</h1>
+          <p class="hero-copy">Let’s get the whole class together again. Add everyone to the class list, save the date, and get ready for a day full of stories, laughter, and familiar faces.</p>
+          <a class="button" href="#roster">Add classmates <span class="arrow" aria-hidden="true">↗</span></a>
+        </div>
+        <div class="hero-art" aria-label="2026 reunion card for the 2024 batch">
+          <div class="sun"></div><span class="sparkle one" aria-hidden="true">✳</span><span class="sparkle two" aria-hidden="true">✳</span>
+          <div class="art-card"><div class="art-inner"><span class="art-small">Together again</span><div class="art-year">2026</div><span class="art-script">the reunion</span><div class="art-rule"></div><span class="art-caption">10th class get-together</span></div></div>
+        </div>
+      </section>
+
+      <section class="details" id="details" aria-label="Party details">
+        <div class="detail"><span class="detail-label">When</span><span class="detail-value">18/10/2026</span></div>
+        <div class="detail"><span class="detail-label">Where</span><span class="detail-value">K.R.Z.P.H.S High School, Lingasamudram</span></div>
+        <div class="detail"><span class="detail-label">Who</span><span class="detail-value">Our 10th class, 2024 batch</span></div>
+      </section>
+
+      <section class="roster-section" id="roster" aria-labelledby="roster-title">
+        <div class="section-heading">
+          <div><p class="eyebrow">The guest list</p><h2 id="roster-title">Every name, one class.</h2></div>
+          <p>Register classmates below. Each of the three sections has up to 30 student places.</p>
+        </div>
+        <div class="roster-layout">
+          <div class="form-stack">
+            <section class="form-card" id="friend-signin" aria-labelledby="signin-title">
+              <h3 id="signin-title">Friend sign-in</h3>
+              <p>Enter your name to open the classmate entry form.</p>
+              <form id="friend-login-form">
+                <label for="friend-name">Your name</label>
+                <input id="friend-name" name="friend" type="text" placeholder="e.g. Asha" maxlength="60" autocomplete="name" required>
+                <button class="button submit" type="submit">Continue <span class="arrow" aria-hidden="true">↗</span></button>
+              </form>
+              <div class="friend-session" id="friend-session" hidden>
+                Signed in as <strong id="signed-in-name"></strong><br>
+                <button class="sign-out" id="sign-out" type="button">Sign out</button>
+              </div>
+              <p class="local-note">Quick sign-in for this browser only; it does not verify accounts or sync between devices.</p>
+            </section>
+            <form class="form-card" id="student-form" hidden>
+              <h3>Register a student</h3>
+              <p>Register a student in the 2024 batch. Each section is limited to 30 students.</p>
+              <label for="student-name">Student name</label>
+              <input id="student-name" name="name" type="text" placeholder="e.g. Asha Kumar" maxlength="60" required>
+              <label for="class-name">Class</label>
+              <input id="class-name" name="className" type="text" value="10th class" maxlength="40" required>
+              <label for="student-section">Section</label>
+              <select id="student-section" name="section" required>
+                <option value="1">Section 1</option><option value="2">Section 2</option><option value="3">Section 3</option>
+              </select>
+              <label for="roll-number">Roll number</label>
+              <input id="roll-number" name="roll" type="text" placeholder="e.g. 12" maxlength="20" required>
+              <button class="button submit" type="submit">Register student <span class="arrow" aria-hidden="true">+</span></button>
+              <p class="local-note">Entries are saved in this browser on this device.</p>
+            </form>
+          </div>
+
+          <div class="roster-panel">
+            <div class="section-tabs" role="tablist" aria-label="Class sections">
+              <button class="tab" type="button" role="tab" aria-selected="true" data-section="1">Section 1</button>
+              <button class="tab" type="button" role="tab" aria-selected="false" data-section="2">Section 2</button>
+              <button class="tab" type="button" role="tab" aria-selected="false" data-section="3">Section 3</button>
+            </div>
+            <div class="roster-box" role="tabpanel" aria-live="polite">
+              <div class="roster-top"><h3 id="active-section-title">Section 1</h3><span class="count" id="student-count">0 / 30 registered</span></div>
+              <ul class="student-list" id="student-list"></ul>
+              <div class="empty" id="empty-state"><div><span>✳</span>No students registered in this section yet.<br>Sign in to register the first student.</div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section class="class-photo-section" aria-labelledby="photo-title">
+      <div class="wrap">
+        <div class="photo-heading">
+          <div><p class="eyebrow">A frame full of memories</p><h2 id="photo-title">Our 10th class.</h2></div>
+          <p>A class photo from K.R.Z.P.H.S School, Lingasamudram. 2023–2024.</p>
+        </div>
+        <figure class="class-photo">
+          <img src="class-photo.jpeg" alt="Group class photograph at K.R.Z.P.H.S School, Lingasamudram, 2023–2024" loading="lazy">
+          <figcaption>K.R.Z.P.H.S School · Lingasamudram · 2023–2024</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="memories" id="memories">
+      <div class="wrap memories-inner">
+        <div><p class="eyebrow">Make it a day to remember</p><h2>Same class.<br>New stories.</h2><p>Bring your favorite school memories, your old friends, and your best reunion energy. We’ll meet on 18 October 2026 at K.R.Z.P.H.S High School, Lingasamudram.</p></div>
+        <div class="memory-stamp" aria-hidden="true"><div><small>Batch of</small><br><span>2024</span><br><small>together again</small></div></div>
+      </div>
+      <div class="wrap memory-gallery" aria-label="Class memories photo gallery">
+        <figure class="memory-card">
+          <img src="memory-school-grounds.jpeg" alt="School grounds beneath a bright sky" loading="lazy">
+          <figcaption>Our school grounds</figcaption>
+        </figure>
+        <figure class="memory-card">
+          <img src="memory-friends.jpeg" alt="A group of classmates spending time outdoors" loading="lazy">
+          <figcaption>Friends together</figcaption>
+        </figure>
+        <figure class="memory-card">
+          <img src="memory-classroom.jpeg" alt="Two classmates sharing a classroom moment" loading="lazy">
+          <figcaption>A classroom memory</figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap footer-inner"><span>Made for the 10th class, 2024 batch · get-together 2026</span><span>Three sections, one class.</span></div></footer>
+
+  <script>
+    (() => {
+      const storageKey = "class-of-2026-reunion-students";
+      const friendStorageKey = "class-of-2026-reunion-friend";
+      const form = document.getElementById("student-form");
+      const loginForm = document.getElementById("friend-login-form");
+      const friendSession = document.getElementById("friend-session");
+      const signedInName = document.getElementById("signed-in-name");
+      const signOutButton = document.getElementById("sign-out");
+      const list = document.getElementById("student-list");
+      const empty = document.getElementById("empty-state");
+      const count = document.getElementById("student-count");
+      const title = document.getElementById("active-section-title");
+      const tabs = [...document.querySelectorAll(".tab")];
+      let activeSection = "1";
+      let students = [];
+      let friendName = "";
+      try {
+        const stored = localStorage.getItem(storageKey);
+        if (stored !== null) {
+          const saved = JSON.parse(stored);
+          if (Array.isArray(saved)) {
+            students = saved.filter(s => s && ["1", "2", "3"].includes(String(s.section)) && s.name && s.roll && s.addedBy !== "Sample names");
+            if (students.length !== saved.length) localStorage.setItem(storageKey, JSON.stringify(students));
+          }
+        }
+        friendName = localStorage.getItem(friendStorageKey) || "";
+      } catch (_) { students = []; friendName = ""; }
+
+      function render() {
+        const visible = students.filter(s => String(s.section) === activeSection)
+          .sort((a, b) => String(a.roll).localeCompare(String(b.roll), undefined, { numeric: true, sensitivity: "base" }));
+        title.textContent = `Section ${activeSection}`;
+        count.textContent = `${visible.length} / 30 registered`;
+        list.replaceChildren();
+        empty.hidden = visible.length > 0;
+        visible.forEach(student => {
+          const item = document.createElement("li");
+          item.className = "student";
+          const roll = document.createElement("span");
+          roll.className = "roll";
+          roll.textContent = `#${student.roll}`;
+          const details = document.createElement("div");
+          details.className = "student-details";
+          const name = document.createElement("span");
+          name.className = "student-name";
+          name.textContent = student.name;
+          const meta = document.createElement("small");
+          meta.className = "student-meta";
+          meta.textContent = `${student.className || "10th class"} · added by ${student.addedBy || "Classmate"}`;
+          details.append(name, meta);
+          const remove = document.createElement("button");
+          remove.className = "remove";
+          remove.type = "button";
+          remove.textContent = "Remove";
+          remove.hidden = !friendName;
+          remove.setAttribute("aria-label", `Remove ${student.name}, roll number ${student.roll}`);
+          remove.addEventListener("click", () => {
+            students = students.filter(s => s.id !== student.id);
+            save();
+          });
+          item.append(roll, details, remove);
+          list.append(item);
+        });
+      }
+      function save() {
+        try { localStorage.setItem(storageKey, JSON.stringify(students)); } catch (_) {}
+        render();
+      }
+      function updateSignIn() {
+        const isSignedIn = Boolean(friendName);
+        loginForm.hidden = isSignedIn;
+        friendSession.hidden = !isSignedIn;
+        form.hidden = !isSignedIn;
+        signedInName.textContent = friendName;
+        render();
+      }
+      loginForm.addEventListener("submit", event => {
+        event.preventDefault();
+        friendName = loginForm.elements.namedItem("friend").value.trim();
+        if (!friendName) return;
+        try { localStorage.setItem(friendStorageKey, friendName); } catch (_) {}
+        loginForm.reset();
+        updateSignIn();
+        document.getElementById("student-name").focus();
+      });
+      signOutButton.addEventListener("click", () => {
+        friendName = "";
+        try { localStorage.removeItem(friendStorageKey); } catch (_) {}
+        updateSignIn();
+      });
+      tabs.forEach(tab => tab.addEventListener("click", () => {
+        activeSection = tab.dataset.section;
+        tabs.forEach(t => t.setAttribute("aria-selected", String(t === tab)));
+        render();
+      }));
+      form.addEventListener("submit", event => {
+        event.preventDefault();
+        const nameField = form.elements.namedItem("name");
+        const classField = form.elements.namedItem("className");
+        const rollField = form.elements.namedItem("roll");
+        const sectionField = form.elements.namedItem("section");
+        const name = nameField.value.trim();
+        const className = classField.value.trim();
+        const roll = rollField.value.trim();
+        const section = sectionField.value;
+        if (!name || !className || !roll || !friendName) return;
+        const sectionStudents = students.filter(s => String(s.section) === section);
+        if (sectionStudents.length >= 30) {
+          sectionField.setCustomValidity("This section already has 30 registered students.");
+          sectionField.reportValidity();
+          return;
+        }
+        const duplicate = sectionStudents.some(s => String(s.roll).toLowerCase() === roll.toLowerCase());
+        if (duplicate) {
+          rollField.setCustomValidity("That roll number is already registered in this section.");
+          rollField.reportValidity();
+          return;
+        }
+        rollField.setCustomValidity("");
+        students.push({ id: `${Date.now()}-${Math.random().toString(16).slice(2)}`, name, className, roll, section, addedBy: friendName });
+        activeSection = section;
+        tabs.forEach(t => t.setAttribute("aria-selected", String(t.dataset.section === section)));
+        save();
+        form.reset();
+        sectionField.value = section;
+        nameField.focus();
+      });
+      form.elements.namedItem("roll").addEventListener("input", () => form.elements.namedItem("roll").setCustomValidity(""));
+      form.elements.namedItem("section").addEventListener("change", () => form.elements.namedItem("section").setCustomValidity(""));
+      updateSignIn();
+    })();
+  </script>
+</body>
+</html>
